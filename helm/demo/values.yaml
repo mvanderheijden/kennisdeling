@@ -1,0 +1,5 @@
+image: mvanderheijden/demo:latest
+
+postgresql:
+  persistence:
+    size: 4Gi

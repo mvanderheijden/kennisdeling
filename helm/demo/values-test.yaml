@@ -1,0 +1,6 @@
+replicas: 1
+env:
+  - name: test
+    value: bla
+  - name: def
+    value: hij

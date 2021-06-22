@@ -1,0 +1,7 @@
+apiVersion: v2
+name: demo
+version: 1.0.0
+dependencies:
+  - name: postgresql
+    repository: https://charts.bitnami.com/bitnami
+    version: 10.5.0

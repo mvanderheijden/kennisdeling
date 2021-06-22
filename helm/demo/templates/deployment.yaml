@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Chart.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: demo-test
+spec:
+  replicas: {{ .Values.replicas }}
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: demo-test
+  template:
+    metadata:
+      name: demo
+      labels:
+        app: demo-test
+    spec:
+      containers:
+        - name: demo-container
+          image: {{ .Values.image }}
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 50m
+              memory: 128Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
+          {{ if .Values.env }}
+          env:
+            {{- range $key, $value := .Values.env }}
+            - name: {{ $value.name  }}
+              value: {{ $value.value  }}
+            {{- end }}
+          {{- end }}
+          envFrom:
+            - secretRef:
+                name: demo
+          volumeMounts:
+            - name: demo-config-volume
+              mountPath: /app/resources
+      volumes:
+        - name: demo-config-volume
+          configMap:
+            name: demo
+
