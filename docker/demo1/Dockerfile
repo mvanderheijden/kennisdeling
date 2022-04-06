@@ -1,8 +1,8 @@
-FROM python:3.8-alpine
+FROM python:3.10-slim
 
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR app
-COPY demo.py ./
+COPY demo1.py ./
 
-CMD python3 demo.py
+CMD python demo1.py
