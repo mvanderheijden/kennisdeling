@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+  namespace: test
+  labels:
+    app: demo
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      name: demo
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: demo-container
+          image: mvanderheijden/demo:latest
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 50m
+              memory: 128Mi
+            requests:
+              cpu: 10m
+              memory: 64Mi
