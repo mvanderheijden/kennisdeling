@@ -77,6 +77,7 @@ In onze Dockerfile hebben we gespecificeerd dat we onze API opstarten met [Uvico
 
 De opdracht:
 - Wijzig de Dockerfile zodat het poort nummer waarop Uvicorn wordt geserveerd vanaf een environment variabele wordt veranderd. Je zult hiervoor het `--port` argument dienen toe te voegen aan het uvicorn commando.
+- Zorg dat de poort van de docker container ook vanaf je laptop bereikbaar is. Dit kan via de command line met `docker run --port {HOST PORT}:{CONTAINER PORT}` of door een `EXPOSE` te gebruiken in de Dockerfile.
 - Bouw vervolgens het image opnieuw en run deze waarbij je het poort nummer 8080 als environment variabele mee geeft.
 
 ## 4. Volumes
