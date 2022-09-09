@@ -2,7 +2,7 @@
 
 ## 1. Je eerste applicatie uitrollen
 Maak eerst een namespace met de naam test aan in je Kubernetes cluster: `kubectl create namespace test`
-We gaan onderstaande yaml configuraties van een applicatie uitrollen op jouw lokale Kubernetes cluster. Bestudeer het eerste yaml bestand en probeer deze uit te rollen op jouw lokale Kubernets cluster.
+We gaan onderstaande yaml configuraties van een applicatie uitrollen op jouw lokale Kubernetes cluster. Bestudeer het eerste yaml bestand en probeer deze uit te rollen op jouw lokale Kubernetes cluster.
 ```yaml
 # pod.yaml
 apiVersion: v1
