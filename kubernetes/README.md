@@ -53,7 +53,7 @@ spec:
 Leg een port-forward naar de service en valideer met behulp van de browser dat de applicatie bereikbaar is.
 
 ## 3. Toevoegen van een Ingress
-Met behulp van onderstaande ingress.yaml zorgen we ervoor dat de service van buiten het Kubernetes cluser te benaderen is (in dit geval localhost omdat we hier een Kubernetes cluster op je laptop hebben).
+Met behulp van onderstaande ingress.yaml zorgen we ervoor dat de service van buiten het Kubernetes cluster te benaderen is (in dit geval localhost omdat we hier een Kubernetes cluster op je laptop hebben).
 ```yaml
 # ingress.yaml
 apiVersion: networking.k8s.io/v1
