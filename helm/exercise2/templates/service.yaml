@@ -5,9 +5,8 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   selector:
-    app: demo-test
+    app: demo
   ports:
     - port: {{ .Values.port }}
       protocol: TCP
       targetPort: {{ .Values.port }}
-

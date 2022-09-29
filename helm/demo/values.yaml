@@ -1,5 +1,2 @@
-image: mvanderheijden/demo:latest
-
-postgresql:
-  persistence:
-    size: 4Gi
+port: 8000
+replicas: 1

@@ -4,19 +4,19 @@ metadata:
   name: demo
   namespace: {{ .Release.Namespace }}
   labels:
-    app: demo-test
+    app: demo
 spec:
-  replicas: {{ .Values.replicas }}
+  replicas: 1
   strategy:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: demo-test
+      app: demo
   template:
     metadata:
       name: demo
       labels:
-        app: demo-test
+        app: demo
     spec:
       containers:
         - name: demo-container
@@ -31,4 +31,3 @@ spec:
             requests:
               cpu: 10m
               memory: 64Mi
-

@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo
-  namespace: {{ .Release.Namespace }}
+  namespace: test
   labels:
     app: demo
 spec:
@@ -22,7 +22,7 @@ spec:
         - name: demo-container
           image: mvanderheijden/demo:latest
           ports:
-            - containerPort: {{ .Values.port }}
+            - containerPort: 8000
               protocol: TCP
           resources:
             limits:
